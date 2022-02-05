@@ -179,6 +179,12 @@ set complete+=kspell
 " Always use vertical diffs
 set diffopt+=vertical
 
+" Reenable arrow keys to work
+unmap <Right>
+unmap <Left>
+unmap <Up>
+unmap <Down>
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
