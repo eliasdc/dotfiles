@@ -15,19 +15,25 @@
   co = checkout
   pf = push --force-with-lease
   st = status
+  l = log --pretty=colored
+	adog = log --all --decorate --oneline --graph
+[pretty]
+  colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
   editor = vim
 [merge]
-  ff = only
+  ff = false
+  log = true
 [commit]
   template = ~/.gitmessage
+  gpgsign = true
 [fetch]
   prune = true
-[rebase]
-  autosquash = true
 [include]
   path = ~/.gitconfig.local
 [diff]
   colorMoved = zebra
+[checkout]
+  defaultRemote = origin
