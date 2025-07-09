@@ -25,14 +25,3 @@ alias -- -="cd -"
 if [[ -f ~/.aliases.local ]]; then
   source ~/.aliases.local
 fi
-
-alias ws="cd ~/omnit_ws"
-alias ws_kill="pkill -f opt/ros; pkill -f omnit_ws/install; pkill gzserver; pkill gzclient; pkill -f omnit_ws/src/raas;"
-alias ws_build="MAKEFLAGS='-j6 -l9.0' colcon build --executor parallel --parallel-workers 6 --symlink-install --continue-on-error --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=ON"
-alias ws_build_sel="ws_build --packages-select"
-
-ws_build_clean() { rm -rf install/"$1" && rm -rf build/"$1" && ws_build --packages-select "$1"; }
-
-# rmf related
-alias ws_rmf="cd ~/omnit_ws/src/raas/rmf/rmf_web/packages/dashboard"
-
