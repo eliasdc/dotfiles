@@ -171,12 +171,19 @@ set complete+=kspell
 set diffopt+=vertical
 
 " Reenable arrow keys to work
-unmap <Right>
-unmap <Left>
-unmap <Up>
-unmap <Down>
+"unmap <Right>
+"unmap <Left>
+"unmap <Up>
+"unmap <Down>
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
+
+call plug#begin()
+" List your plugins here
+Plug 'tpope/vim-sensible'
+Plug 'github/copilot.vim'
+call plug#end()
+
